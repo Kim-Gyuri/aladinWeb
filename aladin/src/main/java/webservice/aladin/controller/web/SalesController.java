@@ -57,6 +57,6 @@ public class SalesController {
         model.addAttribute("categoryTypes", CategoryType.values());
          model.addAttribute("users",sessionUser);
 
-        return "/sales/userProduct";
+        return "sales/userProduct";
     }
 }
