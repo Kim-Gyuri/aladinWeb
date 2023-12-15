@@ -85,7 +85,7 @@
                                             <div class="form-group mx-sm-1 mb-2">
                                                 <select th:field="*{itemStatus}" class="form-control">
                                                     <option value="">판매 상태</option>
-                                                    <option th:each="status : ${T(springstudy.bookstore.domain.enums.ItemSellStatus).values()}"
+                                                    <option th:each="status : ${T(webservice.aladin.domain.enums.ItemSellStatus).values()}"
                                                             th:value="${status}"
                                                             th:text="${status}">option
                                                     </option>
@@ -164,7 +164,7 @@
                                             <div class="form-group mx-sm-1 mb-2">
                                                 <select th:field="*{orderStatus}" class="form-control">
                                                     <option value="">주문상태</option>
-                                                    <option th:each="status : ${T(springstudy.bookstore.domain.enums.OrderStatus).values()}"
+                                                    <option th:each="status : ${T(webservice.aladin.domain.enums.OrderStatus).values()}"
                                                             th:value="${status}"
                                                             th:text="${status}">option
                                                     </option>
