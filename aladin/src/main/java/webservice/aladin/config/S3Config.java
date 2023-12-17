@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
+@PropertySource("/home/ec2-user/app/application-real-db.properties")
 public class S3Config {
 
     @Value("${cloud.aws.region.static}")
