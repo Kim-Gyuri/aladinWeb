@@ -70,7 +70,7 @@ public class ItemService {
             else
                 itemInfo.setYN(IsMainImg.N);
 
-            itemImgService.saveItemImg(itemInfo, multipartFileList.get(i));
+            itemImgService.saveItemImg_s3(itemInfo, multipartFileList.get(i));
         }
     }
 
@@ -162,7 +162,7 @@ public class ItemService {
         // 이미지를 추가로 넣으려고 한다.
         if (!multipartFileList.isEmpty()) {
             for (MultipartFile file : multipartFileList) {
-                Long imgId = itemImgService.saveItemImg(new CreateImgRequest(findItem), file); // 이미지 엔티티를 만들고
+                Long imgId = itemImgService.saveItemImg_s3(new CreateImgRequest(findItem), file); // 이미지 엔티티를 만들고
                 findItem.addMoreItemImg(itemImgService.findByImgId(imgId)); //
             }
         }

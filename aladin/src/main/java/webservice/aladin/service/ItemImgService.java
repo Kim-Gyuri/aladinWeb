@@ -17,12 +17,13 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class ItemImgService {
 
-    private final FileService fileService;
-//    private final S3FileService s3FileService;
+    //private final FileService fileService;
+    private final S3FileService s3FileService;
     private final ItemImgRepository imgRepository;
 
 
     // 상품 등록에 필요한 이미지 저장
+    /*
     public Long saveItemImg(CreateImgRequest itemInfo, MultipartFile multipartFile) throws IOException {
         CreateFileResponse fileInfo = fileService.storeFile(multipartFile);
 
@@ -37,11 +38,11 @@ public class ItemImgService {
         ItemImg saved = imgRepository.save(itemImgEntity);
         return saved.getId();
     }
+   */
 
-/*
 
-    public Long saveItemImg_s3(ItemInfoDto itemInfo, MultipartFile multipartFile) throws IOException {
-        FileInfoDto fileInfo = s3FileService.upload(multipartFile, "test");
+    public Long saveItemImg_s3(CreateImgRequest itemInfo, MultipartFile multipartFile) throws IOException {
+        CreateFileResponse fileInfo = s3FileService.upload(multipartFile, "test");
 
         ItemImg itemImgEntity = ItemImg.imgBuilder()
                 .originImgName(fileInfo.getOriginImgName())
@@ -54,7 +55,6 @@ public class ItemImgService {
         ItemImg saved = imgRepository.save(itemImgEntity);
         return saved.getId();
     }
-     */
 
     // 이미지 이름으로 해당 이미지 객체 조회
     @Transactional(readOnly = true)
