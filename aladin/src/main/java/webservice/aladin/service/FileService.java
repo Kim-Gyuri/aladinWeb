@@ -10,11 +10,11 @@ import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 
-@Service
+//@Service
 @Slf4j
 public class FileService {
 
-   @Value("${file.dir}")
+   //@Value("${file.dir}")
     private String fileDir;
 
     public String getFullPath(String filename) {
