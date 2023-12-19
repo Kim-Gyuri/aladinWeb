@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 @Entity
 @Getter
-@Table(name = "users")
+@Table(name = "USERS")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class User implements Serializable {
     @Id @GeneratedValue
